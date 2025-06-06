@@ -58,8 +58,8 @@ function moveLeft() {
 
 function astroidDown() {
   let astroidTimer = setInterval(() => {
-    astroidY += 5;
-    if (astroidY === 375) {
+    astroidY += blockSize;
+    if (astroidY === canvas.width -blockSize) {
       clearInterval(astroidTimer);
       astroidUp();
     }
@@ -67,7 +67,7 @@ function astroidDown() {
 }
 function astroidUp() {
   let astroidTimer2 = setInterval(() => {
-    astroidY -= 5;
+    astroidY -= blockSize;
     if (astroidY === 0) {
       clearInterval(astroidTimer2);
       astroidDown();
